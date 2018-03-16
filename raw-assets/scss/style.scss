@@ -239,9 +239,21 @@ img {
   }
 }
 
-.slideInLeft {
-  -webkit-animation-name: slideInLeft;
-  animation-name: slideInLeft;
+// .slideInLeft {
+//   -webkit-animation-name: slideInLeft;
+//   animation-name: slideInLeft;
+// }
+
+
+
+.fadeIn {
+	opacity: 0;
+
+	transition: opacity .6s;
+}
+
+.animated.fadeIn {
+	opacity: 1;
 }
 
 
@@ -321,6 +333,7 @@ h6 {
 
 	.hero__title {
 		font-size: 4em;
+		font-weight: 400;
 	}
 
 	.section__title {
