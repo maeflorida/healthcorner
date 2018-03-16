@@ -131,6 +131,11 @@ img {
 }
 
 
+.section--blue {
+	background: #1fa0f3;
+	color: #fff;
+}
+
 .section__title {
 	position: relative;
 	z-index: 2;
@@ -161,7 +166,7 @@ img {
 }
 
 .list__item {
-	margin-left: 2em;
+	margin-left: 1.5em;
 }
 
 .list__title {
@@ -251,6 +256,10 @@ img {
 	background: linear-gradient(to right, #36a8ff 0%,#49dbfd 100%);
 	font-weight: 700;
 	color: #fff;
+}
+
+.footer {
+	padding-bottom: 5em;
 }
 
 

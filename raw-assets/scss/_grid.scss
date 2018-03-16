@@ -39,6 +39,10 @@
 
 @media (min-width: 769px) {
 
+	.row-reverse-xs {
+	flex-direction: row;
+}
+
 	.row.center-last {
 
 		.md-4 {
