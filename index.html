@@ -173,7 +173,7 @@
 
 						</div>
 						<div class="xs-12 md-6  toParallax">
-							<img src="assets/img/stress.jpg" alt="" class="para">
+							<img src="assets/img/scrapes.jpg" alt="" class="para">
 						</div>
 					</div>
 				</div>
@@ -183,7 +183,7 @@
 				<div class="section__inner">
 					<div class="row">
 						<div class="xs-12 md-6 toParallax">
-							<img src="assets/img/stress.jpg" alt="" class="para" data-speed=".3">
+							<img src="assets/img/mosquito.jpg" alt="" class="para">
 						</div>
 						<div class="xs-12 md-6 toAnimate" data-animate="slideInLeft">
 							<h5 class="numbering">2- Painful and red mosquito bite:</h5>
@@ -217,7 +217,7 @@
 							</ul>
 						</div>
 						<div class="xs-12 md-6 toParallax">
-							<img src="assets/img/stress.jpg" alt="" class="para" data-speed=".3">
+							<img src="assets/img/nosebleed.jpg" alt="" class="para" data-speed=".3">
 						</div>
 
 					</div>
@@ -226,9 +226,9 @@
 
 			<section class="section">
 				<div class="section__inner">
-					<div class="row row-reverse-xs">
+					<div class="row">
 						<div class="xs-12 md-6 toParallax">
-							<img src="assets/img/stress.jpg" alt="" class="para" data-speed=".3">
+							<img src="assets/img/burns.jpg" alt="" class="para" data-speed=".3">
 						</div>
 						<div class="xs-12 md-6 toAnimate" data-animate="slideInLeft">
 							<h5 class="numbering">4- Burns:</h5>
@@ -266,7 +266,7 @@
 							</ul>
 						</div>
 						<div class="xs-12 md-6 toParallax">
-							<img src="assets/img/stress.jpg" alt="" class="para" data-speed=".3">
+							<img src="assets/img/seizure.jpg" alt="" class="para" data-speed=".3">
 						</div>
 					</div>
 				</div>
@@ -276,7 +276,7 @@
 				<div class="section__inner">
 					<div class="row ">
 						<div class="xs-12 md-6 toParallax">
-							<img src="assets/img/stress.jpg" alt="" class="para" data-speed=".3">
+							<img src="assets/img/syncope.jpg" alt="" class="para" data-speed=".3">
 						</div>
 						<div class="xs-12 md-6 toAnimate" data-animate="slideInLeft">
 							<h5 class="numbering">6- Vasovagal syncope:</h5>
@@ -313,7 +313,7 @@
 							</ul>
 						</div>
 						<div class="xs-12 md-6 toParallax">
-							<img src="assets/img/stress.jpg" alt="" class="para" data-speed=".3">
+							<img src="assets/img/broken.jpg" alt="" class="para" data-speed=".3">
 						</div>
 
 					</div>
@@ -353,6 +353,7 @@
 
 			<section class="section" id="contact">
 				<div class="section__inner">
+					<h3 class="section__title">Contact Me</h3>
 					<form action="https://formspree.io/maerandakerr@gmail.com" method="POST" class="form">
 					    <input type="text" placeholder="Name" name="name" class="form__control">
 					    <input type="email" placeholder="Email" name="_replyto" class="form__control">
@@ -378,7 +379,8 @@
 			toAnimate = document.querySelectorAll('.toAnimate'),
             winScroll,
             mainHeader = document.querySelector('.header'),
-            menuItem = document.querySelectorAll('.menu__item');
+            menuItem = document.querySelectorAll('.menu__item'),
+            wSize = document.getElementsByTagName('body')[0];
 
         function offsetElem(el) {			
             var rect = el.getBoundingClientRect(),
@@ -400,8 +402,10 @@
         		mainHeader.classList.remove('active');
         	}
             
-            
-            elmeParallax();
+            if(wSize.clientWidth >= 768 ){
+        		elmeParallax();
+        	}
+ 
 
             toAnimate.forEach( el => {
             	let elem = offsetElem(el);
@@ -417,6 +421,18 @@
                 }
             });
         }, false);
+
+
+
+        window.addEventListener('resize', function(e) {
+        	if(wSize.clientWidth >= 768 ){
+        		elmeParallax();
+        	} else {
+        		toPara.forEach( el => {
+	            	el.children[0].style.transform = `translateY(0px)`;
+	            });
+        	}
+        });
 
 
         function elmeParallax() {
