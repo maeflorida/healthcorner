@@ -39,7 +39,13 @@
 
 @media (min-width: 769px) {
 
-	
+	.row.center-last {
+
+		.md-4 {
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
 
 	@for $i from 12 through 1 {
 	    $width: percentage($i / 12);
